@@ -5,7 +5,12 @@ import Contact from './pages/Contact.jsx'
 function App() {
   return (
     <>
-      <nav className="flex gap-6 px-5 py-4 border-b border-[var(--border)]">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <nav className="flex gap-6 px-5 py-4 border-t border-[var(--border)]">
         <NavLink
           to="/"
           end
@@ -24,11 +29,6 @@ function App() {
           Contact
         </NavLink>
       </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
     </>
   )
 }
