@@ -17,7 +17,7 @@ function App() {
             'polygon(0 0, 30% 0, 42% 45%, 62% 45%, 74% 0, 100% 0, 100% 100%, 0 100%)',
         }}
       >
-        <div className="mx-auto flex h-full max-w-[1126px] items-end justify-center gap-6 pb-5">
+        <div className="mx-auto flex h-full max-w-[100vw] items-end justify-center gap-6 pb-5">
           <NavLink
             to="/"
             end
