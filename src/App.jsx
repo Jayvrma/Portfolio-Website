@@ -1,15 +1,21 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
+import Project from './pages/Project.jsx'
 
 function App() {
+  const { pathname } = useLocation()
+  const showNav = !pathname.startsWith('/projects/')
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects/:slug" element={<Project />} />
       </Routes>
 
+      {showNav && (
       <nav
         className="relative left-1/2 w-screen -translate-x-1/2 h-28 bg-gray-200"
         style={{
@@ -37,6 +43,7 @@ function App() {
           </NavLink>
         </div>
       </nav>
+      )}
     </>
   )
 }
